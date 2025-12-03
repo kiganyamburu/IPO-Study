@@ -1,0 +1,166 @@
+--- Loading Data ---
+Initial shape: (3682, 16)
+Shape after date cleaning: (3681, 18)
+
+--- Identifying Groups (SPACs, S&P, Russell) ---
+SPACs found in IPO data: 251
+S&P 500 stocks in IPO data: 51
+Russell 1000 stocks in IPO data: 143
+
+--- Analyzing SPACs ---
+Saved plot: spac_counts_by_year.png
+SPACs in S&P 500: sp
+no    251
+Name: count, dtype: int64
+SPACs in Russell 1000: russell
+no    251
+Name: count, dtype: int64
+
+--- Analyzing Returns ---
+                            ipo_date  ...  iwv_252day_ret
+count                           3681  ...     3681.000000
+mean   2020-04-15 09:19:01.320293120  ...        0.070019
+min              2012-01-27 00:00:00  ...       -0.212995
+25%              2018-06-20 00:00:00  ...       -0.072154
+50%              2021-03-26 00:00:00  ...        0.085147
+75%              2022-07-08 00:00:00  ...        0.175098
+max              2023-09-29 00:00:00  ...        0.799100
+std                              NaN  ...        0.166013
+
+[8 rows x 13 columns]
+
+Comparison (IPO vs Russell):
+Window          | IPO Mean   | Russ Mean  | IPO Med    | Russ Med   | IPO Std    | Russ Std  
+-----------------------------------------------------------------------------------------------
+day0_OTC        | 0.0189     | -0.0001     | 0.0000     | 0.0005     | 0.3945     | 0.0085
+1day_ret        | 0.0305     | 0.0005     | 0.0000     | 0.0009     | 1.0532     | 0.0106
+5day_ret        | 0.0332     | 0.0013     | 0.0000     | 0.0031     | 1.2110     | 0.0202
+22day_ret       | 0.0460     | 0.0086     | 0.0025     | 0.0137     | 1.3013     | 0.0448
+91day_ret       | 0.0586     | 0.0318     | 0.0030     | 0.0487     | 1.9416     | 0.0886
+252day_ret      | 0.0406     | 0.0700     | 0.0000     | 0.0851     | 2.8654     | 0.1660
+
+--- Predictive Analysis ---
+
+Correlation Matrix:
+                sym_day0_OTC  sym_1day_ret  ...  sym_91day_ret  sym_252day_ret
+sym_day0_OTC        1.000000     -0.009717  ...       0.004497        0.005204
+sym_1day_ret       -0.009717      1.000000  ...       0.484109        0.467277
+sym_5day_ret        0.018781      0.960186  ...       0.525600        0.492451
+sym_22day_ret       0.007718      0.646653  ...       0.925753        0.873279
+sym_91day_ret       0.004497      0.484109  ...       1.000000        0.928242
+sym_252day_ret      0.005204      0.467277  ...       0.928242        1.000000
+
+[6 rows x 6 columns]
+
+Regression (1-year ~ 1-month):
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         sym_252day_ret   R-squared:                       0.763
+Model:                            OLS   Adj. R-squared:                  0.763
+Method:                 Least Squares   F-statistic:                 1.182e+04
+Date:                Wed, 03 Dec 2025   Prob (F-statistic):               0.00
+Time:                        23:18:51   Log-Likelihood:                -6450.8
+No. Observations:                3681   AIC:                         1.291e+04
+Df Residuals:                    3679   BIC:                         1.292e+04
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+Intercept        -0.0479      0.023     -2.081      0.038      -0.093      -0.003
+sym_22day_ret     1.9229      0.018    108.716      0.000       1.888       1.958
+==============================================================================
+Omnibus:                     7281.182   Durbin-Watson:                   1.955
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         47178123.247
+Skew:                          15.210   Prob(JB):                         0.00
+Kurtosis:                     556.782   Cond. No.                         1.31
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+Saved plot: scatter_22_252.png
+
+Filtered data shape: (3673, 21) (Original: (3681, 21))
+
+Regression on Filtered Data:
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         sym_252day_ret   R-squared:                       0.035
+Model:                            OLS   Adj. R-squared:                  0.035
+Method:                 Least Squares   F-statistic:                     134.9
+Date:                Wed, 03 Dec 2025   Prob (F-statistic):           1.18e-30
+Time:                        23:18:52   Log-Likelihood:                -5183.5
+No. Observations:                3673   AIC:                         1.037e+04
+Df Residuals:                    3671   BIC:                         1.038e+04
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+Intercept        -0.0308      0.016     -1.878      0.060      -0.063       0.001
+sym_22day_ret     0.6010      0.052     11.615      0.000       0.500       0.702
+==============================================================================
+Omnibus:                     9260.254   Durbin-Watson:                   0.447
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):        219255708.093
+Skew:                          27.128   Prob(JB):                         0.00
+Kurtosis:                    1198.705   Cond. No.                         3.16
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Correlation with 11-month return:
+                sym_22day_ret  sym_252day_ret  sym_22_252_ret
+sym_22day_ret        1.000000        0.188279       -0.056397
+sym_252day_ret       0.188279        1.000000        0.874105
+sym_22_252_ret      -0.056397        0.874105        1.000000
+Saved plot: scatter_22_252_11month.png
+
+--- SPAC vs Non-SPAC Returns ---
+
+Day 0 Return Stats by Level and SPAC:
+                   mean    median       std  count       min        max
+day0_lvl spac                                                          
+abnormal no    2.917992  2.244721  3.009960     30  1.017391  17.750000
+normal   no   -0.004677  0.000000  0.126626   3400 -0.851190   0.973500
+         yes  -0.008804  0.000000  0.070245    251 -0.550420   0.428571
+
+sym_5day_ret Stats by SPAC:
+          mean    median       std  count
+spac                                     
+no    0.034031  0.000000  1.252358   3430
+yes   0.021284  0.001029  0.276315    251
+
+sym_22day_ret Stats by SPAC:
+          mean    median       std  count
+spac                                     
+no    0.047191  0.002239  1.344239   3430
+yes   0.030329  0.003061  0.376508    251
+
+sym_91day_ret Stats by SPAC:
+          mean    median       std  count
+spac                                     
+no    0.060706  0.001021  2.007227   3430
+yes   0.030150  0.009231  0.477305    251
+
+sym_252day_ret Stats by SPAC:
+          mean    median       std  count
+spac                                     
+no    0.042634 -0.006979  2.968079   3430
+yes   0.013135  0.037302  0.157165    251
+
+--- Inclusion Performance (S&P/Russell) ---
+
+S&P 500 Inclusion Performance (1-year return):
+         mean    median       std  count
+sp                                      
+no   0.037079  0.000000  2.884588   3630
+yes  0.292900  0.171014  0.538144     51
+
+Russell 1000 Inclusion Performance (1-year return):
+             mean    median       std  count
+russell                                     
+no       0.030883 -0.001020  2.918564   3538
+yes      0.281593  0.133805  0.737627    143
+
+Saved processed data to stock_ipos_processed.csv
