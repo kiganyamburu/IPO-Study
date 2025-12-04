@@ -1,0 +1,205 @@
+====================================================================================================
+DETAILED POWERPOINT COMPARISON
+====================================================================================================
+
+
+FILE 1: IPO_Analysis_Q5_Q6.pptx
+----------------------------------------------------------------------------------------------------
+Total Slides: 13
+
+  SLIDE 1:
+    - Images: No
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: IPO Analysis: Questions 5 & 6
+
+  SLIDE 2:
+    - Images: No
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: Analysis Overview
+
+  SLIDE 3:
+    - Images: No
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: Question 5(i): Day 0 Return Analysis - Code
+
+  SLIDE 4:
+    - Images: No
+    - Tables: Yes
+    - Text elements: 1
+    - Title/First text: Question 5(i): Day 0 Return Statistics
+
+  SLIDE 5:
+    - Images: Yes
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: Question 5(i): Day 0 Returns - Visual Comparison
+
+  SLIDE 6:
+    - Images: No
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: Question 5(i): Key Findings
+
+  SLIDE 7:
+    - Images: No
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: Question 5(ii): Multi-Window Analysis - Code
+
+  SLIDE 8:
+    - Images: No
+    - Tables: Yes
+    - Text elements: 1
+    - Title/First text: Question 5(ii): Mean Returns & Volatility by Window
+
+  SLIDE 9:
+    - Images: Yes
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: Question 5(ii): Mean Returns Across Time Windows
+
+  SLIDE 10:
+    - Images: Yes
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: Question 5(ii): Return Volatility Comparison
+
+  SLIDE 11:
+    - Images: No
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: Question 6: Index Inclusion Analysis - Code
+
+  SLIDE 12:
+    - Images: No
+    - Tables: Yes
+    - Text elements: 1
+    - Title/First text: Question 6: Index Inclusion Performance (1-Year Returns)
+
+  SLIDE 13:
+    - Images: No
+    - Tables: No
+    - Text elements: 2
+    - Title/First text: Key Conclusions
+
+
+====================================================================================================
+
+FILE 2: Your paragraph text.pptx
+----------------------------------------------------------------------------------------------------
+Total Slides: 15
+
+  SLIDE 1:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: SPACs vs. Non-SPACs & Index Inclusion Effects
+
+  SLIDE 2:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 2
+
+  SLIDE 3:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 3
+
+  SLIDE 4:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 4
+
+  SLIDE 5:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 5
+
+  SLIDE 6:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 6
+
+  SLIDE 7:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 7
+
+  SLIDE 8:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 8
+
+  SLIDE 9:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 9
+
+  SLIDE 10:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 10
+
+  SLIDE 11:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 11
+
+  SLIDE 12:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 12
+
+  SLIDE 13:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 13
+
+  SLIDE 14:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 14
+
+  SLIDE 15:
+    - Images: No
+    - Tables: No
+    - Text elements: 3
+    - Title/First text: 15
+
+
+====================================================================================================
+SUMMARY COMPARISON
+====================================================================================================
+
+Slide Count:
+  - IPO_Analysis_Q5_Q6.pptx: 13 slides
+  - Your paragraph text.pptx: 15 slides
+  - Difference: 2 slides
+
+Visual Elements:
+  - IPO_Analysis_Q5_Q6.pptx: 3 images, 3 tables
+  - Your paragraph text.pptx: 0 images, 0 tables
+
+Key Differences:
+  - IPO_Analysis_Q5_Q6.pptx has FEWER slides (13 vs 15)
+  - IPO_Analysis_Q5_Q6.pptx is more CONCISE and FOCUSED
+  - IPO_Analysis_Q5_Q6.pptx has MORE visualizations (3 vs 0)
+  - IPO_Analysis_Q5_Q6.pptx has MORE data tables (3 vs 0)
+
+====================================================================================================
